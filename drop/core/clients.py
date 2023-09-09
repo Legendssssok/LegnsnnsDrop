@@ -9,7 +9,7 @@ from Drop.plugins import ALL_MODULES
 
 from .logger import LOGS
 
-async def Start_Bot():
+async def Start_DropBot():
     try:
         app = Client(
             "app",
