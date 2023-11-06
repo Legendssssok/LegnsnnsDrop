@@ -4,8 +4,8 @@ from pyromod import listen
 from pyrogram import Client, idle
 from pyrogram.errors import FloodWait
 
-from Drop.Config import API_HASH, API_ID, BOT_TOKEN
-from Drop.plugins import ALL_MODULES
+from drop.Config import API_HASH, API_ID, BOT_TOKEN
+from drop.plugins import ALL_MODULES
 
 from .logger import LOGS
 
