@@ -2,8 +2,8 @@ import ast
 import os
 import sys
 
-from Drop.Config import *
-from Drop.core.logger import LOGS
+from drop.Config import *
+from drop.core.logger import LOGS
 
 Redis = MongoClient = psycopg2 = Database = None
 if REDIS_URI or REDISHOST:
