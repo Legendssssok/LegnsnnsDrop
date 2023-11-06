@@ -16,7 +16,7 @@ async def Start_DropBot():
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            plugins=dict(root="Drop/plugins"),
+            plugins=dict(root="drop/plugins"),
           )
           await app.start()
     except FloodWait as e:
