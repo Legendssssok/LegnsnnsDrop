@@ -18,7 +18,7 @@ async def Start_DropBot():
             bot_token=BOT_TOKEN,
             plugins=dict(root="drop/plugins"),
           )
-          await app.start()
+        await app.start()
     except FloodWait as e:
           LOGS.error(f"Bot Wants to Sleep For {e.value}")
           await asyncio.sleep(e.value + 5)
