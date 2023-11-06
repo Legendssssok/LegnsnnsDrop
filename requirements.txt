@@ -1,1 +1,2 @@
 Pyrogram
+pyromod==1.5
