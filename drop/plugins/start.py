@@ -17,8 +17,8 @@ async def invite(bot, msg):
 
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command("/help"))
+@Client.on_message(filters.private & filters.incoming & filters.command("help"))
 async def hlp(bot, msg):
     user = await bot.get_me()
     mention = user.mention
-    await bot.send_message(msg.chat.id, "BOT INFORMATION\n/help\n - shows this message\n/drop - claim drop\n/invite - invites to the server")
+    await bot.send_message(msg.chat.id, "BOT INFORMATION\n/help - shows this message\n/drop - claim drop\n/invite - invites to the server")
