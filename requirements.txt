@@ -1,2 +1,3 @@
 Pyrogram
 pyromod==1.5
+tgcrypto
