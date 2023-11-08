@@ -25,7 +25,7 @@ async def Start_DropBot():
     except Exception as f:
           LOGS.error(f)
     for all_module in ALL_MODULES:
-          importlib.import_module("StringSessionBot.plugins." + all_module)
+          importlib.import_module("drop.plugins." + all_module)
           LOGS.info(f"➢ Successfully Imported : {all_module}")
     LOGS.info("==============================")
     LOGS.info("🔰Support Group🔰 : @LegendBot_OP")
