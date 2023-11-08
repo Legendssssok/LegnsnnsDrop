@@ -2,6 +2,8 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup
 from drop.Config import INVITE_LINK
 from drop.database.users_db import *
+from drop.database.storefile_db import *
+
 # Start Message
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def start(bot, msg):
@@ -14,7 +16,9 @@ async def start(bot, msg):
 @Client.on_message(filters.private & filters.incoming & filters.command("stats"))
 async def stats(bot, msg):
     id = get_users()
-    await bot.send_message(msg.chat.id, f"Total Users = {id}")
+    file = get_store()
+    await bot.send_message(msg.chat.id, f"Total Users = {len(id)}\n\nTotal File Stored = {len(file)}")
+
 
 @Client.on_message(filters.private & filters.incoming & filters.command("invite"))
 async def invite(bot, msg):
