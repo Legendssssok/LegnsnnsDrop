@@ -5,6 +5,7 @@ from drop.database.storefile_db import *
 # Start Message
 @Client.on_message(filters.private & filters.incoming & filters.command("load"))
 async def start(bot, msg):
+    editable = await msg.reply_text("Send me File")
     input = await bot.listen(editable.chat.id)
     x = await input.download()
     try:
