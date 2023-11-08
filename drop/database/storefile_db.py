@@ -6,7 +6,7 @@ def get_store():
 
 
 def is_store(file):
-    return id in get_store()
+    return file in get_store()
 
 
 def add_store(file):
