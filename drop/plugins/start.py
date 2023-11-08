@@ -10,7 +10,7 @@ async def start(bot, msg):
 
 
 @Client.on_message(filters.private & filters.incoming & filters.command("invite"))
-async def start(bot, msg):
+async def invite(bot, msg):
     user = await bot.get_me()
     mention = user.mention
     await bot.send_message(msg.chat.id, f"Here's the channel link : {INVITE_LINK}.You will be notified there when there is a new drop.")
@@ -18,7 +18,7 @@ async def start(bot, msg):
 
 
 @Client.on_message(filters.private & filters.incoming & filters.command("/help"))
-async def start(bot, msg):
+async def hlp(bot, msg):
     user = await bot.get_me()
     mention = user.mention
     await bot.send_message(msg.chat.id, "BOT INFORMATION\n/help\n - shows this message\n/drop - claim drop\n/invite - invites to the server")
