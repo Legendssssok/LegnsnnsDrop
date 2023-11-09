@@ -45,10 +45,13 @@ async def claim(bot, msg):
             cooldown_message = f"Please wait {remaining_time}.**"
             return await msg.reply_text(cooldown_message)
     owo = get_store()
-    file = owo[0]
-    await msg.reply_text(f"Successfully generated your drop! Here it is:\n\n • {file}")
-    del_store(file)
-    add_time(msg.from_user.id, time.time())
+    if len(owo) > 0:
+        file = owo[0]
+        return await msg.reply_text(f"Successfully generated your drop! Here it is:\n\n • {file}")
+        del_store(file)
+        add_time(msg.from_user.id, time.time())
+    else:
+        return await msg.reply_text(f"You've already received this drop item or there is no stock. Stay tuned for the next drops!")
     
     
 
