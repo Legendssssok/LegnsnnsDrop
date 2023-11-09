@@ -347,9 +347,9 @@ def LegendDB():
                 retry_on_timeout=True,
             )
         elif MongoClient:
-            return MongoDB(Var.MONGO_URI)
+            return MongoDB(MONGO_URI)
         elif psycopg2:
-            return SqlDB(Var.DATABASE_URL)
+            return SqlDB(DATABASE_URL)
         else:
             LOGS.critical(
                 "No DB requirement fullfilled!\nPlease install redis, mongo or sql dependencies...\nTill then using local file as database."
