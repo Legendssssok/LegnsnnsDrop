@@ -8,3 +8,4 @@ REDIS_URI = None
 REDISHOST = None
 MONGO_URI = None
 DATABASE_URL = os.environ.get("DATABASE_URL", None)
+MAX_TIME = 86400
