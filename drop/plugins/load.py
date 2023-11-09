@@ -29,6 +29,7 @@ async def load(bot, msg):
 
 @Client.on_message(filters.private & filters.incoming & filters.command("claim"))
 async def claim(bot, msg):
+    user_id = msg.from_user.id
     last_message_times = get_time()
     time_since_last_message = time.time() - last_message_times[user_id]
     if time_since_last_message < int(max_time):
@@ -39,6 +40,7 @@ async def claim(bot, msg):
     file = owo[0]
     await msg.reply_text(f"Successfully generated your drop! Here it is:\n\n • {file}")
     del_store(file)
+    add_time(msg.from_user.id, time.time())
     
     
 
