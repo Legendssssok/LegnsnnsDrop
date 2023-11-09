@@ -35,8 +35,14 @@ async def claim(bot, msg):
     if user_id in last_message_times:
         time_since_last_message = time.time() - last_message_times[user_id]
         if time_since_last_message < int(max_time):
-            remaining_time = int(max_time) - time_since_last_message
-            cooldown_message = f"Please wait {int(remaining_time / 3600)} hours & {int(remaining_time / 60)} minutes & {int(remaining_time % 60)} seconds before posting another message to the channel.\n\n**Your post is added to queue & will be posted after {int(remaining_time / 60)} minutes & {int(remaining_time % 60)} seconds automatically.**"
+            seconds = int(max_time) - time_since_last_message
+            seconds = seconds % (24 * 3600)
+            hour = seconds // 3600
+            seconds %= 3600
+            minutes = seconds // 60
+            seconds %= 60
+            remaining_time = ("%d hours & %02d minutes & %02d seconds " % (hour, minutes, seconds))
+            cooldown_message = f"Please wait {remaining_time}.**"
             return await msg.reply_text(cooldown_message)
     owo = get_store()
     file = owo[0]
