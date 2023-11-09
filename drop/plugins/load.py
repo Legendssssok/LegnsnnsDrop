@@ -28,7 +28,7 @@ async def load(bot, msg):
         os.remove(x)
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command("claim"))
+@Client.on_message(filters.private & filters.incoming & filters.command("drop"))
 async def claim(bot, msg):
     user_id = msg.from_user.id
     last_message_times = get_time()
