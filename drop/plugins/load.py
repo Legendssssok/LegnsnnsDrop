@@ -9,6 +9,11 @@ from drop.Config import MAX_TIME
 max_time = MAX_TIME
 
 # Start Message
+
+@Client.on_message(filters.private & filters.incoming & filters.command("unload"))
+async def load(bot, msg):
+    clean_store()
+    
 @Client.on_message(filters.private & filters.incoming & filters.command("load"))
 async def load(bot, msg):
     editable = await msg.reply_text("Send me File")
