@@ -32,7 +32,7 @@ async def send(bot, msg):
     start = datetime.now()
     for i in id:
         try:
-            await bot.send_message(int(i), br_msg)
+            await bot.send_message(int(i), br_msg.text)
             success += 1
         except BaseException:
             fail += 1
