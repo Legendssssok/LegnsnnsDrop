@@ -23,7 +23,7 @@ async def stats(bot, msg):
 async def send(bot, msg):
     id = get_users()
     lol = await msg.reply_text("Send me Broadcast Message\n\nTo Cancel : Click /cancel")
-    br_msg = await bot.listen(lol)
+    br_msg = await bot.listen(lol.chat.id)
     success = 0
     fail = 0
     if br_msg.text == "/cancel":
