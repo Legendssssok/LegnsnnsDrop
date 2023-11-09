@@ -26,7 +26,7 @@ async def send(bot, msg):
     br_msg = await bot.listen(lol)
     success = 0
     fail = 0
-    if br_msg.text = "/cancel":
+    if br_msg.text == "/cancel":
        return await msg.reply_text("Cancelled Successfully")
     start = datetime.now()
     for i in id:
