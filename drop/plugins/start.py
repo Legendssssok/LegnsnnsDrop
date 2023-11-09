@@ -11,6 +11,7 @@ async def start(bot, msg):
     user = await bot.get_me()
     mention = user.mention
     await bot.send_message(msg.chat.id, "Thank you for joining, you've been subscribed to our bot. When we do a drop, you will receive a notification. ❤️")
+    await bot.send_message(msg.chat.id, "BOT INFORMATION\n/help - shows this message\n/drop - claim drop\n/invite - invites to the server")
     add_users(msg.chat.id)
 
 
