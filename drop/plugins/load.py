@@ -47,7 +47,7 @@ async def claim(bot, msg):
     owo = get_store()
     if len(owo) > 0:
         file = owo[0]
-        return await msg.reply_text(f"Successfully generated your drop! Here it is:\n\n • {file}")
+        await msg.reply_text(f"Successfully generated your drop! Here it is:\n\n • {file}")
         del_store(file)
         add_time(msg.from_user.id, time.time())
     else:
