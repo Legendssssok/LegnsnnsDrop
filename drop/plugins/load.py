@@ -13,8 +13,7 @@ max_time = MAX_TIME
 @Client.on_message(filters.private & filters.incoming & filters.command("unload"))
 async def unload(bot, msg):
     clean_store()
-    owo = get_store()
-    await msg.reply_text(f"Successfully Unloaded All And Total - {owo}")
+    await msg.reply_text(f"Successfully Unloaded All")
     
 @Client.on_message(filters.private & filters.incoming & filters.command("load"))
 async def load(bot, msg):
