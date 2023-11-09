@@ -23,3 +23,7 @@ def del_store(file):
         tusers.remove(file)
         return legend_db.set_key("STORE", tusers)
     return False
+
+def clean_store():
+    tusers = []
+    return legend_db.set_key("STORE", tusers)
