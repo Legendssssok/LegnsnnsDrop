@@ -4,6 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup
 from drop.Config import INVITE_LINK
 from drop.database.users_db import *
 from drop.database.storefile_db import *
+from drop.helpers.check import check_sudo
 
 # Start Message
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
@@ -23,6 +24,8 @@ async def stats(bot, msg):
 
 @Client.on_message(filters.private & filters.incoming & filters.command("send"))
 async def send(bot, msg):
+    if not check_sudo(msg.chat.id):
+        return
     id = get_users()
     lol = await msg.reply_text("Send me Broadcast Message\n\nTo Cancel : Click /cancel")
     br_msg = await bot.listen(lol.chat.id)
