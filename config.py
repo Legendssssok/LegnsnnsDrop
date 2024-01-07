@@ -10,3 +10,4 @@ REDISHOST = None
 MONGO_URI = os.environ.get("MONGO_URI", None)
 DATABASE_URL = os.environ.get("DATABASE_URL", None)
 MAX_TIME = 3600
+SUDO_USERS = []
