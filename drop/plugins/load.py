@@ -5,6 +5,7 @@ from pyrogram.types import InlineKeyboardMarkup
 from drop.database.storefile_db import *
 from drop.database.time_db import *
 from drop.Config import MAX_TIME
+from drop.helpers.check import check_sudo
 
 max_time = MAX_TIME
 
@@ -12,12 +13,16 @@ max_time = MAX_TIME
 
 @Client.on_message(filters.private & filters.incoming & filters.command("unload"))
 async def unload(bot, msg):
+    if not check_sudo(msg.chat.id):
+        return
     clean_store()
     await msg.reply_text(f"Successfully Unloaded All")
 
 
 @Client.on_message(filters.private & filters.incoming & filters.command("load"))
 async def load(bot, msg):
+    if not check_sudo(msg.chat.id):
+        return
     editable = await msg.reply_text("Send me File")
     input = await bot.listen(editable.chat.id)
     x = await input.download()
